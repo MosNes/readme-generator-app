@@ -82,7 +82,7 @@ const questions = [
     //Tests
     {
         type: 'editor',
-        name: 'tests',
+        name: 'testing',
         message: 'Please enter your instructions for testing. (Required)',
         validate: qInput => {
             if (qInput) {
@@ -164,7 +164,7 @@ const testData = {
     installation: "These are installation instructions",
     usage: "These are the usage instructions",
     contribute: "These are the instructions for making contributions.",
-    tests: "These are the instructions for testing.",
+    testing: "These are the instructions for testing.",
     confirmLicense: true,
     license: "MIT",
     github: "MosNes",
