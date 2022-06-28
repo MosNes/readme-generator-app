@@ -175,14 +175,38 @@ const testData = {
 };
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {};
+function writeToFile(fileName, data) {
+    return new Promise((resolve,reject) => {
+        fs.writeFile('./ReadMes/'+fileName+'.md',data, err=> {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            resolve({
+                ok: true,
+                message: 'Readme Created!'
+            })
+        });
+    });
+};
 
 // TODO: Create a function to initialize app
 function init() {
-    // inquirer.prompt(questions)
-    // .then(response => {console.log(response)});
-    console.log(testData)
-    console.log(generateMarkdown(testData));
+    inquirer.prompt(questions)
+    .then(response => {
+        let markdownObj = {
+            title: response.title ,
+            data: generateMarkdown(response)
+        };
+        return markdownObj;
+    }).then(markdown => {
+        return writeToFile(markdown.title,markdown.data);
+    })
+    .catch(err => {
+        console.log(err)
+    });
+    
 };
 
 // Function call to initialize app
