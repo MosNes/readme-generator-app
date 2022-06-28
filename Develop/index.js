@@ -9,7 +9,7 @@ const generateMarkdown = require('./utils/generateMarkdown');
 const emailRegEx = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
 
-// TODO: Create an array of questions for user input
+//Array of Questions
 const questions = [
     //Project Title
     {
@@ -160,21 +160,21 @@ const questions = [
     }
 ];
 
-const testData = {
-    title: "Test Project",
-    description: "This is a short description of the project.",
-    installation: "These are installation instructions",
-    usage: "These are the usage instructions",
-    contribute: "These are the instructions for making contributions.",
-    testing: "These are the instructions for testing.",
-    confirmLicense: true,
-    license: "GNU GPLv3",
-    github: "MosNes",
-    repoLink: "https://github.com/MosNes/readme-generator-app",
-    email: "7hekarl@gmail.com"
-};
+// const testData = {
+//     title: "Test Project",
+//     description: "This is a short description of the project.",
+//     installation: "These are installation instructions",
+//     usage: "These are the usage instructions",
+//     contribute: "These are the instructions for making contributions.",
+//     testing: "These are the instructions for testing.",
+//     confirmLicense: true,
+//     license: "GNU GPLv3",
+//     github: "MosNes",
+//     repoLink: "https://github.com/MosNes/readme-generator-app",
+//     email: "7hekarl@gmail.com"
+// };
 
-// TODO: Create a function to write README file
+//Write README file
 function writeToFile(fileName, data) {
     return new Promise((resolve,reject) => {
         fs.writeFile('./ReadMes/'+fileName+'.md',data, err=> {
@@ -191,7 +191,7 @@ function writeToFile(fileName, data) {
     });
 };
 
-// TODO: Create a function to initialize app
+//Initialize app function
 function init() {
     inquirer.prompt(questions)
     .then(response => {
@@ -202,6 +202,9 @@ function init() {
         return markdownObj;
     }).then(markdown => {
         return writeToFile(markdown.title,markdown.data);
+    })
+    .then(writeFileResponse => {
+        console.log(writeFileResponse.message);
     })
     .catch(err => {
         console.log(err)

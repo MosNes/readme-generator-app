@@ -46,6 +46,8 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data)}
   
   ![${userRepo}](https://img.shields.io/github/languages/top/${data.github}/${userRepo})
+
+  ![${userRepo}](https://img.shields.io/github/languages/count/${data.github}/${userRepo})
   
   
   ## Description
