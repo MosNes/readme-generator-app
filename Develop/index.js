@@ -159,17 +159,27 @@ const questions = [
 ];
 
 const testData = {
-    
-}
+    title: "Test Project",
+    description: "This is a short description of the project.",
+    installation: "These are installation instructions",
+    usage: "These are the usage instructions",
+    contribute: "These are the instructions for making contributions.",
+    tests: "These are the instructions for testing.",
+    confirmLicense: true,
+    license: "MIT",
+    github: "MosNes",
+    repoLink: "https://github.com/MosNes/readme-generator-app",
+    email: "7hekarl@gmail.com"
+};
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {};
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions)
-    .then(response => {console.log(response)});
-}
+    // inquirer.prompt(questions)
+    // .then(response => {console.log(response)});
+};
 
 // Function call to initialize app
 init();
