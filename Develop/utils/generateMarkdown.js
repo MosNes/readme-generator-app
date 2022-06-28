@@ -27,7 +27,13 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-
+  if (!license.confirmLicense) {
+    return '';
+  } else {
+    return `
+    - [License](#license)
+    `
+  }
 };
 
 // TODO: Create a function that returns the license section of README
@@ -38,7 +44,7 @@ function renderLicenseSection(license) {
   } else {
     return `
     ## License
-    
+
     This project is covered under the ${license.license} license.
     `
   }
@@ -70,6 +76,7 @@ function generateMarkdown(data) {
   - [Contributing](#contributing)
   - [Testing](#testing)
   - [Questions](#questions)
+  ${renderLicenseLink}
   
   ## Installation
   
@@ -91,6 +98,8 @@ function generateMarkdown(data) {
   
   ## Questions
   
+  If you have any questions regarding this project, please reach out to me here:
+
   - GitHub: [${data.github}](https://github.com/${data.github})
   - Email: ${data.email}
 
