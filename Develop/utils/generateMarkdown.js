@@ -1,26 +1,12 @@
-const testData = {
-  title: "Test Project",
-  description: "This is a short description of the project.",
-  installation: "These are installation instructions",
-  usage: "These are the usage instructions",
-  contribute: "These are the instructions for making contributions.",
-  tests: "These are the instructions for testing.",
-  confirmLicense: true,
-  license: "GNU GPLv3",
-  github: "MosNes",
-  repoLink: "https://github.com/MosNes/readme-generator-app",
-  email: "7hekarl@gmail.com"
-};
-
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (!license.confirmLicense) {
     return '';
   } else {
-    return `
-      [license](https://img.shields.io/badge/License-${license.license}-brightgreen)
-    `
+
+
+    return `![license](https://img.shields.io/badge/License-${encodeURIComponent(license.license)}-brightgreen)`
   }
 };
 
@@ -30,9 +16,7 @@ function renderLicenseLink(license) {
   if (!license.confirmLicense) {
     return '';
   } else {
-    return `
-    - [License](#license)
-    `
+    return `- [License](#license)`
   }
 };
 
@@ -42,11 +26,10 @@ function renderLicenseSection(license) {
   if (!license.confirmLicense) {
     return '';
   } else {
-    return `
-    ## License
+    return `## License
 
-    This project is covered under the ${license.license} license.
-    `
+    This project is covered under the ${license.license} license.`
+    
   }
 
 };
@@ -76,7 +59,7 @@ function generateMarkdown(data) {
   - [Contributing](#contributing)
   - [Testing](#testing)
   - [Questions](#questions)
-  ${renderLicenseLink}
+  ${renderLicenseLink(data)}
   
   ## Installation
   
@@ -106,7 +89,5 @@ function generateMarkdown(data) {
   ${renderLicenseSection(data)}
 `;
 };
-
-console.log(generateMarkdown(testData));
 
 module.exports = generateMarkdown;

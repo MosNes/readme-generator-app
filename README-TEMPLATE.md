@@ -2,6 +2,8 @@
 
 ## Badges
 
+![license](https://img.shields.io/badge/License-GNU%20GPLv3-brightgreen)
+
 ![${userRepo}](https://img.shields.io/github/license/${userGitHub}/${userRepo})
 
 ![${userRepo}](https://img.shields.io/github/languages/top/${userGitHub}/${userRepo})

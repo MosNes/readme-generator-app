@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 
 const fs = require('fs');
 
-const generateMarkdown = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 //Regular Expression for email validation
 const emailRegEx = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
@@ -168,7 +168,7 @@ const testData = {
     contribute: "These are the instructions for making contributions.",
     testing: "These are the instructions for testing.",
     confirmLicense: true,
-    license: "MIT",
+    license: "GNU GPLv3",
     github: "MosNes",
     repoLink: "https://github.com/MosNes/readme-generator-app",
     email: "7hekarl@gmail.com"
@@ -181,6 +181,8 @@ function writeToFile(fileName, data) {};
 function init() {
     // inquirer.prompt(questions)
     // .then(response => {console.log(response)});
+    console.log(testData)
+    console.log(generateMarkdown(testData));
 };
 
 // Function call to initialize app
