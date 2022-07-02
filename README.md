@@ -36,6 +36,7 @@
    - Answer the prompts using your terminal.
    - When a prompt opens a temp text file, type your response, then press ctrl+s to save the file and close the editor to move to the next prompt.
    - After you have responded to each prompt, a new Readme file will be created in the ReadMes folder in the Dist folder.
+   - Here is a video tutorial: [Tutorial](https://drive.google.com/file/d/1urwP_yS9RhFzyp0n_foCY1QAeJwA-DC7/view)
 
   
   ---
