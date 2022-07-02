@@ -47,8 +47,8 @@
   
   If you have any questions regarding this project, please reach out to me here:
 
-  - GitHub: [MosNes](https://github.com/MosNes)
-  - Email: 7hekarl@gmail.com
+  - GitHub: 
+  - Email: 
 
   ## License
 
